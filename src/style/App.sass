@@ -1,0 +1,607 @@
+$alpha: .1
+$yellow: rgba(253,203,1,$alpha*2.5)
+$purple: rgba(37,4,71,$alpha)
+$purple--noAlpha: rgb(37,4,71)
+$pink: rgba(245,2,97,$alpha*1.5)
+$blue: rgba(0,235,234,$alpha)
+
+// Utility
+
+.loading
+  width: 100vW
+  height: 100vH
+  z-index: 10000
+  position: fixed
+  background: black
+  background-image: radial-gradient(rgba(37,4,71,.8)30%, rgba(0,0,0,1))
+  overflow-x: hidden
+  overflow-y: hidden
+  color: $color__secondary
+#loading
+  display: flex
+  justify-content: center
+  align-content: center
+  align-items: center
+  h1::after
+    content: ""
+    animation: 3s ease infinite dots
+  @keyframes dots
+    0%
+      content: ""
+    25%
+      content: "."
+    50%
+      content: ".."
+    75%
+      content: "..."
+
+#accent
+  height: 100%
+  width: 100%
+  top: 10px
+  left: 15px
+  position: absolute
+  background-color: $purple--noAlpha
+  z-index: -1
+  box-shadow: 0px 2px 5px 0px rgba(37,4,71, .1)
+
+.atTop
+  top: -65px !important
+
+.tab.atTop
+  top: -10px !important
+  height: 1rem
+  width: 1.5rem
+  position: absolute
+  background-color: $purple--noAlpha
+  border-bottom-left-radius: 1rem
+  border-bottom-right-radius: 1rem
+  z-index: -1
+  box-shadow: 0px 2px 5px 0px rgba(37, 4, 71, 0.1)
+  transition: top .3s
+
+.anchor
+  position: absolute
+  top: -70px
+  left: 0
+
+.more
+  text-align: center
+  margin-bottom: $pad__main
+  a
+    font-family: $font__title--sub
+    position: relative
+    animation: 1s ease infinite bobble
+    color: $color__secondary
+    padding: 0
+    transition: color .1s
+    &:hover
+      color: rgba(209,230,236,1)
+    i
+      colo: $color__secondary
+      pointer-events: none    
+  @keyframes bobble
+    0%
+      top: 0px
+    50%
+      top: 2px
+    100%
+      top: 0px
+
+.hide
+  opacity: 0
+  transition: opacity .2s
+  pointer-events: none
+
+.show
+  transition: opacity .2s
+  opacity: 1
+  pointer-events: all
+
+.hamburger
+  $hHeight: 5
+  $hOffset: 2
+  $borderCol: #b579245e
+  transition: opacity .2s
+  pointer-events: none
+  opacity: 0
+  position: fixed
+  right: 0
+  top: 0
+  z-index: 3
+  margin: $hHeight +px
+  display: flex
+  flex-direction: column
+  background-image: radial-gradient(rgba(37, 4, 71, 0.2) 25%, rgba(0,0,0,0) 75%)
+  &:hover
+    cursor: pointer
+    #topBun
+      #sidesContainer
+        top: -2px
+        transform: rotate(5deg)
+      #cheese span
+        top: 6px
+  span
+    width: $hHeight*6 +px
+    height: $hHeight*.3 +px
+    position: relative
+    background-color: #e4a34a
+  #topBun
+    background: none
+    height: $hHeight+3 +px
+    margin-bottom: $hOffset*2 - 1 +px
+    #sidesContainer
+      transition: top .3s, transform .3s
+      top: 0px
+      position: absolute
+      width: 100%
+      height: 100%
+      background: none
+      #seed
+        position: absolute
+        height: 2px
+        width: 2px
+        background: #d3943cb8
+        border-radius: 100%
+      .s1
+        top: 3px
+        left: 10px
+      .s2
+        top: 3px
+        left: 18px
+      .s3
+        top: 6px
+        left: 5px
+      .s4
+        top: 6px
+        left: 14px
+      .s5
+        top: 6px
+        left: 24px
+
+      #L
+        position: absolute
+        height: 100%
+        width: 52%
+        border-top-left-radius: 90%
+        border: 1px solid $borderCol
+        border-right: none 
+
+      #R
+        border: 1px solid $borderCol
+        border-left: none 
+        right: 0
+        position: absolute
+        height: 100%
+        width: 52%
+        border-top-right-radius: 90%
+
+  #cheese
+    position: absolute
+    bottom: -13px
+    height: 10px
+    background: none
+    overflow: hidden
+    span
+      transition: top ease-in-out .1s
+      background: none
+      height: 1px
+      width: 1px
+      top: -1px
+      border-top: solid $hHeight + 4 +px #ffd54e
+      border-left: solid $hHeight + 4 +px rgba(0,0,0,0)
+      border-right: solid 26px rgba(0,0,0,0)
+      z-index: 4
+  #steak
+    background: #712e12
+    border: 1px solid #5f260f
+    height: $hHeight - 3 +px
+    margin: auto
+    width: $hHeight*5.5 +px 
+    border-radius: 10px
+  #bottomBun
+    width: $hHeight*5.9 +px     
+    background: none
+    height: $hHeight - 3 +px
+    margin: auto
+    margin-top: $hOffset - 2 +px
+    #L
+      position: absolute
+      height: 100%
+      width: 52%
+      border-bottom-left-radius: 40%
+      border: 1px solid $borderCol
+      border-right: none 
+
+    #R
+      border: 1px solid $borderCol
+      border-left: none 
+      right: 0
+      position: absolute
+      height: 100%
+      width: 52%
+      border-bottom-right-radius: 40%
+
+
+// Main
+.main
+  background-color: $purple
+
+  nav
+    display: flex
+    justify-content: center
+    position: fixed
+    flex-direction: row
+    width: 100%
+    z-index: 2
+
+    a
+      position: relative
+      text-align: center
+      flex-basis: 0
+      flex-grow: 1
+      font-family: $font__title--sub
+      font-size: 1.2rem
+      margin: 0px .1rem
+      padding: $pad__main
+      color: $color__secondary
+      max-width: 10%
+      margin: 0
+      justify-content: center
+      display: flex
+      #text
+        min-width: 70px
+        transition: background ease .5s, ease left .2s, ease top .2s
+        background: rgba(37,4,71,0)
+        padding: .2rem .4rem
+        position: relative
+        pointer-events: none
+        top: 0px
+        left: 0px
+        border-radius: 2px
+      #accent
+        transition: background ease .15s, box-shadow ease .20s, left ease .20s, top ease .20s
+        background: rgba(0,235,234,0)
+        top: 0px
+        left: 0px
+        box-shadow: none
+        border-radius: 1px
+      &:hover
+        #text
+          top: -2px !important
+          left: -2px !important
+          background: $purple--noAlpha
+        #accent
+          box-shadow: 0px 2px 5px 0px rgba(37, 4, 71, 0.1)
+          background: rgba(209,230,236,1)
+          top: 10px
+          left: 20px
+        .tab
+          top: -30px !important
+
+  header
+    background: url("./img/bg3.png")
+    background-size: contain
+    display: flex 
+    min-height: 100vh
+    justify-content: center
+    flex-direction: column
+  
+    .title
+      max-width: 90%
+      margin: auto
+      display: flex
+      flex: 2
+      justify-content: center
+      align-items: center
+      h1
+        margin: 0
+        padding: 0
+        color: $color__secondary
+        font-size: 3.5rem
+        text-align: center
+        position: relative;
+        z-index: 1;
+        padding: 1rem
+        #accent
+          left: 0
+          top: 0
+          border-radius: 40px
+          background-color: transparent
+          background-image: radial-gradient(rgba(37, 4, 71, .9) 50%, rgba(0,0,0,0) 70%)
+          box-shadow: none
+        i
+          font-size: 2.5rem
+          font-family: $font__title--sub
+        
+    .logo
+      text-align: center
+      color: $color__secondary
+      display: none
+    .social
+      display: flex
+      justify-content: flex-end
+      a
+        position: relative
+        top: 0px
+        transition: top .1s, color .1s
+        padding: 0
+        color: $color__secondary
+        &:hover
+          color: rgba(209,230,236,1)
+          top: -3px
+        .fab
+          padding: 0px  .5rem 2px 2px
+      
+  .content
+    position: relative
+    z-index: 0
+    display: flex
+    flex-direction: column
+    max-width: 90%
+    margin: auto
+    padding: $pad__main
+    align-items: center
+
+  .about
+    margin: $spacing 0
+    position: relative
+    width: 60%
+    z-index: 1
+    h3
+      margin-top: 0
+    #accent
+      background-color: $yellow
+
+  .projects
+    position: relative
+    margin: $pad__main 0
+    z-index: 1
+    h3
+      margin-top: 0
+    .project
+      position: relative
+      display: flex
+      margin-bottom: 2rem
+      h3
+        font-size: 1.2rem
+      img
+        width: 100%
+      .l
+        flex: 1
+        order: 1
+        padding: $pad__main
+        padding-left: 0
+      .r
+        position: relative
+        flex: 1
+        order: 2
+        padding: $pad__main
+        padding-right: 0
+      ul
+        display: flex
+        justify-content: column
+        padding: 0
+        li
+          padding-right: $pad__main
+      i
+        position: relative
+        color: $purple--noAlpha
+        top: 0px
+        transition: top .3s, color .3s
+        &:hover
+          top: -3px
+          color: lighten($purple--noAlpha, 20%)
+        
+    #accent
+      background-color: $blue
+    
+    .firebase
+      display: inline-block
+      width: 1.5rem
+      height: 1.5rem
+      &::before
+        content: "";
+        background: url(./img/firebase.png)
+        -webkit-filter: grayscale(100%)
+        background-size: contain
+        background-repeat: no-repeat
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+        position: absolute
+        filter: hue-rotate(195deg) saturate(110%) brightness(20%) contrast(110%)
+
+  .contact
+    margin: $spacing 0
+    position: relative
+    width: 60%
+    z-index: 1
+    h3
+      margin-top: 0
+    iframe
+      width: 100%
+      height: 600px
+    #accent
+      background-color: $pink
+  
+  .back
+    margin-bottom: $spacing
+    a
+      color: $color__main
+      &:hover
+        color: $purple--noAlpha
+
+  footer
+    position: relative;
+    max-width: 90%;
+    margin: auto;
+    padding: 1rem;
+    ul
+      margin: 0
+      padding: 0
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      flex-wrap: wrap
+      
+      li
+        text-align: center
+        vertical-align: middle
+        padding: 0
+        color: $color__main
+        font-size: 1rem
+        width: 100%
+        max-width: 25%
+        i
+          font-size: 1rem
+          padding-right: 1rem
+        a
+          padding: 0
+          position: relative
+          top: 0px
+          transition: top .1s, color .1s
+          &:hover
+            color: $purple--noAlpha
+            top: -3px
+
+// Responsive Media
+@media screen and (min-width: 2900px)
+  i
+    font-size: 4rem !important
+  p, a
+    font-size: 2rem
+  h3
+    font-size: 3rem !important
+  .main
+    nav
+      a
+        font-size: 2.5rem
+    header
+      .title
+        h1
+          font-size: 7rem
+          i
+            font-size: 5rem !important
+    footer
+      i
+        font-size: 1rem !important
+
+@media screen and (max-width: 1200px)
+  i
+    font-size: 2rem !important
+  .main
+    .hamburger
+      pointer-events: all
+      opacity: 1
+    nav
+      background: $purple--noAlpha
+      display: block
+      a
+        max-width: 100%
+        font-size: 1.4rem
+      .atTop
+        top: 0px !important
+      .tab
+        display: none
+    .projects
+      .project
+        display: block
+        padding: 0
+        .l, .r
+          display: block
+          padding: $pad__main 0
+    .contact
+      width: 100%
+    footer
+      i
+        font-size: 1rem !important
+
+@media screen and (max-width: 1000px)
+  .main
+    p
+      font-size: .9rem
+    header
+      .title
+        h1
+          font-size: 3rem
+          i
+            font-size: 2rem !important
+    header .title, header .title h1, .contact, .about
+      width: 100%
+    footer
+      ul
+        li
+          max-width: 100%
+          width: auto
+          padding: $pad__main 0
+        #social
+          display: none
+
+@media screen and (max-width: 700px)
+  i
+    font-size: 2rem !important
+  .main
+    header
+      .title
+        h1
+          padding: $pad__main 0
+          font-size: 2.5rem
+          i
+            font-size: 1.5rem !important
+    .contact
+      height: 600px
+      padding-bottom: 2rem
+    .contact, .about
+      width: 100%
+    .back 
+      margin-bottom: 0
+
+@media screen and (max-width: 410px)
+  i
+    font-size: 1.5rem !important
+  .main
+    h3
+      font-size: 1.1rem !important
+    p
+      font-size: .8rem
+    header
+      .title
+        h1
+          font-size: 1.5rem
+          i
+            font-size: 1.2rem !important
+    .contact
+      height: 600px
+      padding-bottom: 2rem
+    .contact, .about
+      width: 100%
+    footer
+      ul
+        li
+          a
+            font-size: .8rem
+          i
+            font-size: .8rem !important
+            padding-right: .8rem
+
+@media screen and (max-width: 350px)
+  i
+    font-size: 1.3rem !important
+  .main
+    nav
+      a
+        font-size: 1.2rem
+        max-width: 100%
+      .social
+        i
+          font-size: 2rem !important
+    footer
+      ul
+        li
+          a
+            font-size: .7rem
+          i
+            font-size: .7rem !important
+            padding-right: .7rem

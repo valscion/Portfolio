@@ -1,0 +1,189 @@
+{
+  "header":
+  {
+    "head": ["Moi, mä oon Teemu. ","Teen Front-end toteutuksia ja verkkosovelluksia."],
+    "menu": [
+      {
+        "text": "Minä",
+        "href": "anchor-about"
+      },
+      {
+        "text": "Projekteja",
+        "href": "anchor-projects"
+      },
+      {
+        "text": "Ota yhteyttä!",
+        "href": "anchor-contact"
+      }
+    ],
+    "scroll": {
+      "text": "Lue lisää",
+      "href": "content"
+    },
+    "social": [
+      {
+        "ico": "fab fa-github-square",
+        "href": "https://github.com/Larqqa"
+      },
+      {
+        "ico": "fab fa-linkedin",
+        "href": "https://www.linkedin.com/in/teemu-nurmi/"
+      }
+    ]
+  },
+  "content":
+  {
+    "about": {
+      "head": "Vähän minusta,",
+      "content": "Koodausta olen opiskellut siitä lähtien, kun innostuin siitä koulun toisen vuoden PHP-kurssilla. Valmistuin tradenomiksi 04/2018, jonka jälkeen suoritin asepalveluksen. Armeijassa hakeuduin aliupseerikurssille ja kotiuduin kersanttina 06/2019. Teen tehokasta ja tarkkaa työtä. Tavoitteenani on oppia uutta sekä edistää tietojani ja taitojani IT-alalla."
+    },
+    "projects": {
+      "head": "Muutama tekemäni projekti...",
+      "projects": [
+        {
+          "head": "Electron Asteroids",
+          "description": "Asteroids tyylinen peli koodattuna perus JavaScriptillä. Peli käyttää HTML:n canvas elementtiä grafiikan luomiseen ja moottori toimii JavaScript setInterval toiminnalla.",
+          "problems": "Suurimpia haasteita toi valitsemani olio-ohjelmointi tyylinen toteutus, koska en ollut tähän mennessä opiskellut kyseistä tyyliä. Myös JavaScriptin osaaminen oli melko vähäistä, mutta tämän projektin aikana opin perusteet hyvin.",
+          "technologies":{
+            "head": "Käytettyjä teknologioita",
+            "tech": [
+              {
+                "ico": "fab fa-js",
+                "href": "JAVASCRIPT"
+              },
+              {
+                "ico": "fab fa-html5",
+                "href": "HTML5"
+              },
+              {
+                "ico": "fab fa-css3",
+                "href": "CSS3"
+              }
+            ]
+          },
+          "img": "./img/asteroids.png",
+          "links": {
+            "head": "links to project",
+            "href": [
+              {
+                "text": "GitHub",
+                "href": "https://github.com/Larqqa/Electron-asteroids",
+                "ico": "fab fa-github-square"
+              },
+              {
+                "text": "website",
+                "href": "#",
+                "ico": "fas fa-laptop"
+              }
+            ]
+          }
+        },
+        {
+          "head": "React To-do app",
+          "description": "Ensimmäinen Reactilla toteuttamani projekti. Yksinkertainen To-do aplikaatio, jossa Firebase toimii back-endinä. Sisään voi kirjautua tunnuksilla: email: testaaja@testi.fi password: 123456.",
+          "problems": "Projekti keskittyi enemmän toiminnalisuuden kehitykseen ja opin paljon Reactista, Firebasesta ja niiden käytöstä. Aplikaatio vaatii sisäänkirjautumisen toimiakseen, jotta Firebase osaa lisätä eri käyttäjien muistiinpanot omaan tauluun. Projektista jäi puuttumaan käyttäjän lisäämisen toiminnallisuus.",
+          "technologies":{
+            "head": "Käytettyjä teknologioita",
+            "tech": [
+              {
+                "ico": "fab fa-js",
+                "href": "JAVASCRIPT"
+              },
+              {
+                "ico": "fab fa-react",
+                "href": "REACT"
+              },
+              {
+                "ico": "fab fa-html5",
+                "href": "HTML5"
+              },
+              {
+                "ico": "fab fa-sass",
+                "href": "SASS"
+              },
+              {
+                "ico": "firebase",
+                "text": "firebase",
+                "href": "firebase"
+              }
+            ]
+          },
+          "img": "./img/kanboost.png",
+          "links": {
+            "head": "links to project",
+            "href": [
+              {
+                "text": "GitHub",
+                "href": "https://github.com/Larqqa/Firebase-React-to-do-app",
+                "ico": "fab fa-github-square"
+              },
+              {
+                "text": "website",
+                "href": "https://kanboost.firebaseapp.com/",
+                "ico": "fas fa-laptop"
+              }
+            ]
+          }
+        },
+        {
+          "head": "Tutkituottavuutta",
+          "description": "Ensimmäinen WordPress:lla toteuttamani verkkosivu. Toteutus tehtiin osana opinnäytetyötäni, mutta se ei kuitenkaan päätynyt käytettäväksi. Sivusto on Single-Page tyylinen toteutus, jossa on kilpailusta tietoja ja Caldera forms:lla toteutettu yhteydenotto lomake.",
+          "problems": "Tämän projektin kautta opin tekemään WordPress toteutuksia ja omia teemoja. Suurin haaste oli Single-Page formaatin suunnittelu ja toteutus, koska en ollut aiemmin tehnyt kyseisen tyylisiä sivuja. Opin myös uusia ominaisuuksia PHP:sta, kuten looppien tehokasta käyttöä WordPress sivujen teemoissa.",
+          "technologies":{
+            "head": "Käytettyjä teknologioita",
+            "tech": [
+              {
+                "ico": "fab fa-js",
+                "href": "JAVASCRIPT"
+              },
+              {
+                "ico": "fab fa-php",
+                "href": "PHP"
+              },
+              {
+                "ico": "fab fa-html5",
+                "href": "HTML5"
+              },
+              {
+                "ico": "fab fa-css3",
+                "href": "CSS3"
+              }
+            ]
+          },
+          "img": "./img/tutkituottavuutta.png",
+          "links": {
+            "head": "links to project",
+            "href": [
+              {
+                "text": "website",
+                "href": "http://tutkituottavuutta.fi/",
+                "ico": "fas fa-laptop"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "contact": {
+    "head": "Ota yhteyttä!",
+    "form": "https://docs.google.com/forms/d/e/1FAIpQLSfu03vT0P40Inc3t2KpWzbGjPRNZZCgxPpbcc8EEeqN-18AZQ/viewform?embedded=true"
+  },
+  "footer": {
+    "head": "Footer",
+    "social": [
+      {
+        "text": "GitHub",
+        "ico": "fab fa-github-square",
+        "href": "https://github.com/Larqqa"
+      },
+      {
+        "text": "LinkedIn",
+        "ico": "fab fa-linkedin",
+        "href": "https://www.linkedin.com/in/teemu-nurmi/"
+      }
+    ],
+    "phone": "044 587 0895",
+    "email": "teemu.nurmi95@gmail.com"
+  }
+}
