@@ -143,6 +143,30 @@ function App({d}) {
   }
 
   console.log(data)
+  
+  const Hamburger = () => {
+    return(
+      <span className="hamburger" onClick={handleHamburger}>
+        <span id="topBun">
+          <span id="sidesContainer">
+            <span id="L" />
+            <span id="R" />
+            <span id="seed" className="s1" />
+            <span id="seed" className="s2"/>
+            <span id="seed" className="s3"/>
+            <span id="seed" className="s4"/>
+            <span id="seed" className="s5"/>
+          </span>
+          <span id="cheese"><span /></span>
+        </span>
+        <span id="steak" />
+        <span id="bottomBun">
+          <span id="L" />
+          <span id="R" />
+        </span>
+      </span>
+    )
+  }
 
   const Navigation = ({ nav }) => {
     return(
@@ -166,7 +190,7 @@ function App({d}) {
           </a>
         </div>
         <div className="social">
-          { head.social.map((ico, i) => <a target="_blank" rel="noopener noreferrer" key={i} href={ico.href}><i className={ico.ico}></i></a>) }
+          { head.social.map((ico, i) => <a target="_blank" rel="noopener noreferrer" key={i} href={ico.href}><i className={ico.ico} /></a>) }
         </div>
       </header>
     )
@@ -178,35 +202,14 @@ function App({d}) {
     return(
       <footer>
         <ul>
-          <li><a href="#header" onClick={handleScroll}><i className="fas fa-copyright" />Teemu Nurmi {year.getFullYear()}</a></li>
+          { foot.social.map((ico, i) => <li key={i} id="social"><a target="_blank" rel="noopener noreferrer" href={ico.href} title={ico.text}><i className={ico.ico} /></a></li>) }
+          <li><a target="_blank" rel="noopener noreferrer" href={foot.source}><i className="fas fa-code" title="Source code" /></a></li>
+        </ul>
+        <ul id="copyright">
+          <li><a href="#header" onClick={handleScroll}><i className="fas fa-copyright copy" />Teemu Nurmi {year.getFullYear()}</a></li>
           <li><a href={`mailto:${foot.email}`}>{foot.email}</a></li>
-          { foot.social.map((ico, i) => <li key={i} id="social"><a target="_blank" rel="noopener noreferrer" href={ico.href}>{ico.text}</a></li>) }
         </ul>
       </footer>
-    )
-  }
-
-  const Hamburger = () => {
-    return(
-      <span className="hamburger" onClick={handleHamburger}>
-        <span id="topBun">
-          <span id="sidesContainer">
-            <span id="L" />
-            <span id="R" />
-            <span id="seed" className="s1" />
-            <span id="seed" className="s2"/>
-            <span id="seed" className="s3"/>
-            <span id="seed" className="s4"/>
-            <span id="seed" className="s5"/>
-          </span>
-          <span id="cheese"><span /></span>
-        </span>
-        <span id="steak" />
-        <span id="bottomBun">
-          <span id="L" />
-          <span id="R" />
-        </span>
-      </span>
     )
   }
 

@@ -22,10 +22,12 @@
     },
     "social": [
       {
+        "text": "GitHub",
         "ico": "fab fa-github-square",
         "href": "https://github.com/Larqqa"
       },
       {
+        "text": "LinkedIn",
         "ico": "fab fa-linkedin",
         "href": "https://www.linkedin.com/in/teemu-nurmi/"
       }
@@ -49,15 +51,15 @@
             "tech": [
               {
                 "ico": "fab fa-js",
-                "href": "JAVASCRIPT"
+                "href": "JavaScript"
               },
               {
                 "ico": "fab fa-html5",
-                "href": "HTML5"
+                "href": "HTML 5"
               },
               {
                 "ico": "fab fa-css3",
-                "href": "CSS3"
+                "href": "CSS 3"
               }
             ]
           },
@@ -71,7 +73,7 @@
                 "ico": "fab fa-github-square"
               },
               {
-                "text": "website",
+                "text": "Live sivu",
                 "href": "#",
                 "ico": "fas fa-laptop"
               }
@@ -87,24 +89,19 @@
             "tech": [
               {
                 "ico": "fab fa-js",
-                "href": "JAVASCRIPT"
+                "href": "JavaScript"
               },
               {
                 "ico": "fab fa-react",
-                "href": "REACT"
+                "href": "React.js"
               },
               {
                 "ico": "fab fa-html5",
-                "href": "HTML5"
+                "href": "HTML 5"
               },
               {
                 "ico": "fab fa-sass",
-                "href": "SASS"
-              },
-              {
-                "ico": "firebase",
-                "text": "firebase",
-                "href": "firebase"
+                "href": "Sass"
               }
             ]
           },
@@ -118,7 +115,7 @@
                 "ico": "fab fa-github-square"
               },
               {
-                "text": "website",
+                "text": "Live sivu",
                 "href": "https://kanboost.firebaseapp.com/",
                 "ico": "fas fa-laptop"
               }
@@ -134,7 +131,7 @@
             "tech": [
               {
                 "ico": "fab fa-js",
-                "href": "JAVASCRIPT"
+                "href": "JavaScript"
               },
               {
                 "ico": "fab fa-php",
@@ -142,11 +139,15 @@
               },
               {
                 "ico": "fab fa-html5",
-                "href": "HTML5"
+                "href": "HTML 5"
               },
               {
                 "ico": "fab fa-css3",
-                "href": "CSS3"
+                "href": "CSS 3"
+              },
+              {
+                "ico": "fab fa-wordpress",
+                "href": "WordPress"
               }
             ]
           },
@@ -155,7 +156,7 @@
             "head": "links to project",
             "href": [
               {
-                "text": "website",
+                "text": "Live sivu",
                 "href": "http://tutkituottavuutta.fi/",
                 "ico": "fas fa-laptop"
               }
@@ -184,6 +185,7 @@
       }
     ],
     "phone": "044 587 0895",
-    "email": "teemu.nurmi95@gmail.com"
+    "email": "teemu.nurmi95@gmail.com",
+    "source": "https://github.com/Larqqa/Portfolio"
   }
 }
