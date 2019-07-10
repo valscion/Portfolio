@@ -94,9 +94,9 @@ function App({d}) {
     window.addEventListener('resize', (event) => {
       const head = document.getElementById('header')
       const height = window.outerHeight
-      console.log(height - parseInt(head.style.minHeight))
+      const headHeight = parseInt(head.style.minHeight)
 
-      if(height - parseInt(head.style.minHeight) > 200 || height - parseInt(head.style.minHeight) < -200) head.style.minHeight = `${height}px`
+      if(height - headHeight > 200 || height - headHeight < -200) head.style.minHeight = `${height}px`
     })
   })
 
