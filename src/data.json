@@ -37,7 +37,7 @@
   {
     "about": {
       "head": "Vähän minusta,",
-      "content": "Koodausta olen opiskellut siitä lähtien, kun innostuin siitä koulun toisen vuoden PHP-kurssilla. Valmistuin tradenomiksi 04/2018, jonka jälkeen suoritin asepalveluksen. Armeijassa hakeuduin aliupseerikurssille ja kotiuduin kersanttina 06/2019. Teen tehokasta ja tarkkaa työtä. Tavoitteenani on oppia uutta sekä edistää tietojani ja taitojani IT-alalla."
+      "content": "Koodausta olen opiskellut siitä lähtien, kun innostuin siitä koulun toisen vuoden PHP-kurssilla. Valmistuin tradenomiksi 04/2018, jonka jälkeen suoritin asepalveluksen. Nyt käyn Full Stack Open 2019 kurssia. Sen kautta tavoitteenani on syventää Reactin hallitsemistani ja kehittyä käyttökokemuksen suunnittelussa."
     },
     "projects": {
       "head": "Muutama tekemäni projekti...",
@@ -65,7 +65,7 @@
           },
           "img": "./img/asteroids.png",
           "links": {
-            "head": "links to project",
+            "head": "Linkkejä projektiin",
             "href": [
               {
                 "text": "GitHub",
@@ -107,7 +107,7 @@
           },
           "img": "./img/kanboost.png",
           "links": {
-            "head": "links to project",
+            "head": "Linkkejä projektiin",
             "href": [
               {
                 "text": "GitHub",
@@ -153,7 +153,7 @@
           },
           "img": "./img/tutkituottavuutta.png",
           "links": {
-            "head": "links to project",
+            "head": "Linkkejä projektiin",
             "href": [
               {
                 "text": "Live sivu",

@@ -113,7 +113,7 @@ $blue: rgba(0,235,234,$alpha)
   display: flex
   flex-direction: column
   background-image: radial-gradient(rgba(37, 4, 71, 0.2) 25%, rgba(0,0,0,0) 75%)
-  &:hover
+  &:hover, &:active
     cursor: pointer
     #topBun
       #sidesContainer
@@ -281,7 +281,9 @@ $blue: rgba(0,235,234,$alpha)
 
   header
     background: url("./img/bg3.png")
-    background-size: contain
+    background-attachment: fixed
+    background-repeat: no-repeat
+    background-size: cover
     display: flex 
     min-height: 100vh
     justify-content: center
@@ -388,8 +390,9 @@ $blue: rgba(0,235,234,$alpha)
         position: relative
         color: $purple--noAlpha
         top: 0px
-        transition: top .3s, color .3s
-        &:hover
+        transition: top .1s, color .1s
+      a:hover
+        i
           top: -3px
           color: lighten($purple--noAlpha, 20%)
         
@@ -450,7 +453,7 @@ $blue: rgba(0,235,234,$alpha)
         justify-content: center
         padding-bottom: 0
         a, .copy
-          font-size: .8rem
+          font-size: .8rem !important
       
       li
         text-align: center
@@ -520,15 +523,13 @@ $blue: rgba(0,235,234,$alpha)
           padding: $pad__main 0
     .contact
       width: 100%
-    footer
-      i
-        font-size: 1rem !important
 
 @media screen and (max-width: 1000px)
   .main
     p
       font-size: .9rem
     header
+      background-image: url("./img/bg4.png")
       .title
         h1
           font-size: 3rem
@@ -538,6 +539,8 @@ $blue: rgba(0,235,234,$alpha)
       width: 100%
     footer
       ul
+        &#copyright
+          justify-content: space-evenly
         li
           max-width: 100%
           width: auto
@@ -586,6 +589,8 @@ $blue: rgba(0,235,234,$alpha)
     footer
       ul
         li
+          padding-bottom: 0
+          padding-right: 1rem
           a
             font-size: .8rem
           i

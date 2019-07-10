@@ -93,8 +93,10 @@ function App({d}) {
     })
     window.addEventListener('resize', (event) => {
       const head = document.getElementById('header')
-      const height = window.innerHeight
-      head.style.minHeight = `${height}px`
+      const height = window.outerHeight
+      console.log(height - parseInt(head.style.minHeight))
+
+      if(height - parseInt(head.style.minHeight) > 200 || height - parseInt(head.style.minHeight) < -200) head.style.minHeight = `${height}px`
     })
   })
 
@@ -141,8 +143,6 @@ function App({d}) {
     }
     return
   }
-
-  console.log(data)
   
   const Hamburger = () => {
     return(
@@ -203,11 +203,11 @@ function App({d}) {
       <footer>
         <ul>
           { foot.social.map((ico, i) => <li key={i} id="social"><a target="_blank" rel="noopener noreferrer" href={ico.href} title={ico.text}><i className={ico.ico} /></a></li>) }
-          <li><a target="_blank" rel="noopener noreferrer" href={foot.source}><i className="fas fa-code" title="Source code" /></a></li>
+          <li id="social"><a target="_blank" rel="noopener noreferrer" href={foot.source}><i className="fas fa-code" title="Source code" /></a></li>
         </ul>
         <ul id="copyright">
+          <li><a href={`mailto:${foot.email}`}><b>{foot.email}</b></a></li>
           <li><a href="#header" onClick={handleScroll}><i className="fas fa-copyright copy" />Teemu Nurmi {year.getFullYear()}</a></li>
-          <li><a href={`mailto:${foot.email}`}>{foot.email}</a></li>
         </ul>
       </footer>
     )
