@@ -17,14 +17,22 @@ function App({d}) {
     for(let i=0; i < navButtons.length; i++) {
       const nav = navButtons[i]
       const tab = navTabs[i]
+      const bodyPos = document.body.getBoundingClientRect().top
 
       // If body is not at top of the viewport
-      if(document.body.getBoundingClientRect().top < 0){
+      if(bodyPos < 0){
         nav.classList.add("atTop")
         tab.classList.add("atTop")
       } else {
         nav.classList.remove("atTop") 
         tab.classList.remove("atTop") 
+      }
+
+      // Change nav colors if on top of header
+      if(bodyPos + parseInt(document.getElementById('header').style.minHeight) <= 0) {
+        tab.classList.remove("blue")
+      } else {
+        tab.classList.add("blue")
       }
     }
 

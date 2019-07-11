@@ -30,8 +30,8 @@ const Hamburger = ({ handleHamburger }) => {
 const Navigation = ({ nav, handleScroll, pdf }) => {
   return(
     <nav id="nav">
-      { nav.map((a, i) => <a key={i} href={`#${a.href}`} className="navButton" onClick={handleScroll}><span className="tab"></span><span id="text" className="navText">{a.text}<span id="accent"></span></span></a>) }
-      <a target="_blank" rel="noopener noreferrer" href={`${pdf}`} className="navButton"><span className="tab"></span><span id="text" className="navText">Minun CV<span id="accent"></span></span></a>
+      { nav.map((a, i) => <a key={i} href={`#${a.href}`} className="navButton" onClick={handleScroll}><span className="tab"></span><span id="text" className="navText">{a.text}</span></a>) }
+      <a target="_blank" rel="noopener noreferrer" href={`${pdf}`} className="navButton"><span className="tab"></span><span id="text" className="navText">Minun CV</span></a>
     </nav>
   )
 }
