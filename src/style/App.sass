@@ -117,16 +117,22 @@
     align-items: center
 
   .about
+    padding: $pad__main
     margin: $spacing 0
     position: relative
     width: 60%
     z-index: 1
     h3
       margin-top: 0
+    a
+      color: $purple--noAlpha
+      &:hover
+        color: lighten($purple--noAlpha, 20%)
     #accent
       background-color: $yellow
 
   .projects
+    padding: $pad__main
     position: relative
     margin: $pad__main 0
     z-index: 1
@@ -171,6 +177,7 @@
       background-color: $blue
 
   .contact
+    padding: $pad__main
     margin: $spacing 0
     position: relative
     width: 60%

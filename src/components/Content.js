@@ -5,7 +5,7 @@ import Projects from './Projects'
 
 const Hamburger = ({ handleHamburger }) => {
   return(
-    <span className="hamburger" onClick={handleHamburger}>
+    <span className="hamburger" id="hb" onClick={handleHamburger}>
       <span id="topBun">
         <span id="sidesContainer">
           <span id="L" />
@@ -55,12 +55,13 @@ const Header = ({ head, handleScroll }) => {
   )
 }
 
-const About = ({ ab }) => {
+const About = ({ ab, pdf }) => {
   return(
     <div className="about" id="about" >
       <span id="anchor-about" className="anchor" />
       <h3>{ ab.head }</h3>
       <p>{ ab.content }</p>
+      <a target="_blank" rel="noopener noreferrer" href={`${pdf}`}><b>Minun CV</b></a>
       <span id="accent" className="accent-about"></span>
     </div>
   )
@@ -102,7 +103,7 @@ const Content = ({ handleHamburger, nav, pdf, head, handleScroll, content, conta
       <Header head={head} handleScroll={handleScroll} />
       
       <div className="content" id="content">
-        <About ab={ content.about } />
+        <About ab={ content.about } pdf={pdf} />
         <Projects pr={ content.projects } />
         <Contact ct={ contact } />
       </div>

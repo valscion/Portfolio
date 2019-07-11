@@ -81,7 +81,7 @@
           }
         },
         {
-          "head": "React To-do app",
+          "head": "Kanboost",
           "description": "Ensimmäinen Reactilla toteuttamani projekti. Yksinkertainen To-do applikaatio, jossa Firebase toimii back-endinä. Sisään voi kirjautua tunnuksilla: email: testaaja@testi.fi password: 123456.",
           "problems": "Projekti keskittyi enemmän toiminnalisuuden kehitykseen ja opin paljon Reactista, Firebasesta ja niiden käytöstä. Applikaatio vaatii sisäänkirjautumisen toimiakseen, jotta Firebase osaa lisätä eri käyttäjien muistiinpanot omaan tauluun. Projektista jäi puuttumaan käyttäjän lisäämisen toiminnallisuus.",
           "technologies":{

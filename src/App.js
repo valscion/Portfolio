@@ -58,8 +58,8 @@ function App({d}) {
         element.style.opacity = "1"
         element.style.left = "0px"
 
-        accent.style.left = "15px"
-        accent.style.top = "10px"
+        accent.style.left = "0px"
+        accent.style.top = "0px"
         return true
       } else {
         element.style.opacity = "0"
@@ -159,6 +159,15 @@ function App({d}) {
   // When hamburger is clicked, handle navigation show/hide
   const handleHamburger = (e) => {
     e.preventDefault()
+    const burger = document.getElementById("hb")
+    if(burger.classList.contains('open')) {
+      burger.classList.remove('open')
+      burger.classList.add('close')
+    } else {
+      burger.classList.remove('close')
+      burger.classList.add('open')
+    }
+
     const element = document.getElementById("nav")
     showNavigation(element, element.classList.contains('show'))
   }
