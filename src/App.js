@@ -1,56 +1,58 @@
 import React, { useState, useEffect } from 'react';
 import Content from './components/Content'
+import pdf from './cv_teemu_nurmi.pdf';
 
 function App({d}) {
+  // Set states
   const [data] = useState(d)
   const [loadingText] = useState("ladataan")
 
+  // Check if element is in viewport
   const isInViewport = () => {
+    // Hide navigation if window is scrolled
+    const navButtons = document.getElementsByClassName('navText')
+    const navTabs = document.getElementsByClassName('tab')
+
+    // the index for both is the same so we can use the same loop
+    for(let i=0; i < navButtons.length; i++) {
+      const nav = navButtons[i]
+      const tab = navTabs[i]
+
+      // If body is not at top of the viewport
+      if(document.body.getBoundingClientRect().top < 0){
+        nav.classList.add("atTop")
+        tab.classList.add("atTop")
+      } else {
+        nav.classList.remove("atTop") 
+        tab.classList.remove("atTop") 
+      }
+    }
+
+    // Bring element to view if it's in the viewport
     let ele = [document.getElementById("about"), document.getElementById("projects"), document.getElementById("contact")]
-
-    let els = document.getElementsByClassName('navText')
-    for(let i=0; i < els.length; i++) {
-      let el = els[i]
-      if(document.body.getBoundingClientRect().top < 0){
-        el.classList.add("atTop")
-      } else {
-        el.classList.remove("atTop") 
-      }
-    }
-
-    els = document.getElementsByClassName('tab')
-    for(let i=0; i < els.length; i++) {
-      let el = els[i]
-      if(document.body.getBoundingClientRect().top < 0){
-        el.classList.add("atTop")
-      } else {
-        el.classList.remove("atTop") 
-      }
-    }
-
+    
     ele = ele.map(el => {
       if (!el) return false;
-      const offset = window.innerHeight / 3 * 2.5
-      const top = el.getBoundingClientRect().top;
+      const offset = window.innerHeight / 1.2
+      
+      // Get how far from the top the element is
+      const top = el.getBoundingClientRect().top
+
+      // Check if the page is scrolled to the bottom
       const isScrolled = window.innerHeight >= document.body.getBoundingClientRect().bottom ? true : false
+      
+      // elements distance - offset is less than 0, or viewport is scrolled to the pages bottom, show the elements 
       return ({"isInView": ((top - offset) <= 0 || isScrolled) ? true : false, "element": el})
     })
 
     bringToView(ele)
   }
   
+  // Add styling to elements to be shown
   const bringToView = (ele) => {
     ele.map(el => {
       const element = document.getElementById(el.element.id)
       const accent = document.getElementsByClassName(`accent-${el.element.id}`)[0]
-  
-      element.style.opacity = "0"
-      element.style.left = "-50px"
-      element.style.transition = "opacity .5s, left .5s"
-
-      accent.style.top = "5px"
-      accent.style.left = "-45px"
-      accent.style.transition = "left .7s, top .5s"
 
       if(el.isInView) {
         element.style.opacity = "1"
@@ -59,26 +61,38 @@ function App({d}) {
         accent.style.left = "15px"
         accent.style.top = "10px"
         return true
+      } else {
+        element.style.opacity = "0"
+        element.style.left = "-50px"
+        element.style.transition = "opacity .5s, left .5s"
+
+        accent.style.top = "5px"
+        accent.style.left = "-45px"
+        accent.style.transition = "left .7s, top .5s"
       }
       return true
     })
-    return true
   }
 
   useEffect(() => {
     window.addEventListener('scroll', isInViewport)
-    window.addEventListener('load', (event) => {
-      const head = document.getElementById('header')
-      const height = window.innerHeight
-      head.style.minHeight = `${height}px`
+    window.addEventListener('load', () => {
+      // Show loading page until page is fully loaded
+
+      // Set header height to viewport
+      document.getElementById('header').style.minHeight = `${window.innerHeight}px`
       
+      // Set navigation to hidden if viewport width is 1200px
       if(window.innerWidth < 1200) document.getElementById("nav").classList.add('hide')
-      document.getElementById('main').classList.remove('loading')
       
+      // Hide loading screen after page is loaded
+      document.getElementById('main').classList.remove('loading')
       const element = document.getElementById("loading")
       let opacity = 1
       let timer = setInterval(frame, 10)
 
+      // Animate opacity of the loading screen
+      // After done, remove the element
       function frame() {
         if (opacity <= 0) {
           clearInterval(timer)
@@ -91,42 +105,58 @@ function App({d}) {
       
       console.log('page is fully loaded')
     })
-    window.addEventListener('resize', (event) => {
+    window.addEventListener('resize', () => {
+      // If page is resized, reset header height
       const head = document.getElementById('header')
       const height = window.outerHeight
       const headHeight = parseInt(head.style.minHeight)
 
+      // Set the header height only if the height change is over 200px
+      // This allows for a nicer look on mobile, as the url bar is calculated to the window height
+      // Now it resizes only when you turn the phone to its side, and not when scrolling
       if(height - headHeight > 200 || height - headHeight < -200) head.style.minHeight = `${height}px`
+
+      // Hide the nav bar if window width is less than 1200px
+      const element = document.getElementById("nav")
+      showNavigation(element, window.innerWidth < 1200)
     })
   })
 
+  // Capitalize string
   String.prototype.capitalize = function() {
-    return this.charAt(0).toUpperCase() + this.slice(1);
+    return this.charAt(0).toUpperCase() + this.slice(1)
   }
 
+  // Handle nav button clicks, to scroll the page to the correct element
   const handleScroll = (e) => {
     e.preventDefault()
 
+    // Get buttons target
     let val = e.target.href
     
+    // Format target to a usable string
     let hist = val.replace('anchor-','');
     hist = hist.slice(hist.indexOf('#')+1)
 
+    // Get page title
     let placeholder = document.title
+
+    // If target is set (ie. | is found), remove the target from the title
+    // Sanitizes the string to only have the starting title
     if(placeholder.indexOf('|') !== -1) placeholder = placeholder.substring(0, placeholder.indexOf('|'))
 
+    // Adds the target to the page title and saves the target into browser history
+    // Easier to come back, to the content that users want to see
     document.title = `${placeholder} | ${hist.capitalize()}`
     window.history.pushState('','',val)
     
+    // Get target element id and scroll into view
     val = val.slice(val.indexOf('#')+1)
-    
     const ele = document.getElementById(val)
     ele.scrollIntoView({behavior: "smooth"})
-
-    const element = document.getElementById("nav")
-    showNavigation(element, window.innerWidth < 1200)
   }
   
+  // When hamburger is clicked, handle navigation show/hide
   const handleHamburger = (e) => {
     e.preventDefault()
     const element = document.getElementById("nav")
@@ -143,92 +173,22 @@ function App({d}) {
     }
     return
   }
-  
-  const Hamburger = () => {
-    return(
-      <span className="hamburger" onClick={handleHamburger}>
-        <span id="topBun">
-          <span id="sidesContainer">
-            <span id="L" />
-            <span id="R" />
-            <span id="seed" className="s1" />
-            <span id="seed" className="s2"/>
-            <span id="seed" className="s3"/>
-            <span id="seed" className="s4"/>
-            <span id="seed" className="s5"/>
-          </span>
-          <span id="cheese"><span /></span>
-        </span>
-        <span id="steak" />
-        <span id="bottomBun">
-          <span id="L" />
-          <span id="R" />
-        </span>
-      </span>
-    )
-  }
-
-  const Navigation = ({ nav }) => {
-    return(
-      <nav id="nav">
-        { nav.map((a, i) => <a key={i} href={`#${a.href}`} className="navButton" onClick={handleScroll}><span className="tab"></span><span id="text" className="navText">{a.text}<span id="accent"></span></span></a>) }
-      </nav>
-    )
-  }
-
-  const Header = ({ head }) => {
-    return(
-      <header id="header">
-        <p className="logo">logo</p>
-        <div className="title" id="title">
-          <h1>{head.head[0]}<br/><i>{head.head[1]}</i><span id="accent"></span></h1>
-        </div>
-        <div className="more">
-          <a href={`#${head.scroll.href}`} onClick={handleScroll}>
-            {head.scroll.text}<br />
-            <i className="fas fa-arrow-circle-down"></i>
-          </a>
-        </div>
-        <div className="social">
-          { head.social.map((ico, i) => <a target="_blank" rel="noopener noreferrer" key={i} href={ico.href}><i className={ico.ico} /></a>) }
-        </div>
-      </header>
-    )
-  }
-
-  const Footer = ({ foot }) => {
-    const year = new Date()
-    // Add phone number: <li><a href={`tel:${foot.phone}`}>{foot.phone}</a></li>
-    return(
-      <footer>
-        <ul>
-          { foot.social.map((ico, i) => <li key={i} id="social"><a target="_blank" rel="noopener noreferrer" href={ico.href} title={ico.text}><i className={ico.ico} /></a></li>) }
-          <li id="social"><a target="_blank" rel="noopener noreferrer" href={foot.source}><i className="fas fa-code" title="Source code" /></a></li>
-        </ul>
-        <ul id="copyright">
-          <li><a href={`mailto:${foot.email}`}><b>{foot.email}</b></a></li>
-          <li><a href="#header" onClick={handleScroll}><i className="fas fa-copyright copy" />Teemu Nurmi {year.getFullYear()}</a></li>
-        </ul>
-      </footer>
-    )
-  }
 
   return(
     <div className="main loading" id="main" >
       <div id="loading" className="loading">
         <h1>{loadingText}</h1>
       </div>
-      <Hamburger />
-      <Navigation nav={d.header.menu} />
-      <Header head={d.header} />
-      <Content content={d.content} contact={d.contact} />
-      <div className="back more">
-          <a href="#content" onClick={handleScroll}>
-            <i className="fas fa-arrow-circle-up"></i><br />
-            takaisin ylös
-          </a>
-      </div>
-      <Footer foot={d.footer} />
+      <Content
+        handleHamburger={handleHamburger}
+        nav={d.header.menu}
+        pdf={pdf}
+        head={d.header}
+        handleScroll={handleScroll}
+        content={d.content}
+        contact={d.contact}
+        footer={d.footer}
+      />
     </div>
   )
 }

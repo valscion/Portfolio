@@ -1,6 +1,61 @@
 import React from 'react'
 import Projects from './Projects'
 
+// Return all the different content
+
+const Hamburger = ({ handleHamburger }) => {
+  return(
+    <span className="hamburger" onClick={handleHamburger}>
+      <span id="topBun">
+        <span id="sidesContainer">
+          <span id="L" />
+          <span id="R" />
+          <span id="seed" className="s1" />
+          <span id="seed" className="s2"/>
+          <span id="seed" className="s3"/>
+          <span id="seed" className="s4"/>
+          <span id="seed" className="s5"/>
+        </span>
+        <span id="cheese"><span /></span>
+      </span>
+      <span id="steak" />
+      <span id="bottomBun">
+        <span id="L" />
+        <span id="R" />
+      </span>
+    </span>
+  )
+}
+
+const Navigation = ({ nav, handleScroll, pdf }) => {
+  // <a className="navButton" target="_blank" rel="noopener noreferrer" href={pdf}><span className="tab"></span><span id="text" className="navText">Minun CV<span id="accent"></span></span></a>
+  return(
+    <nav id="nav">
+      { nav.map((a, i) => <a key={i} href={`#${a.href}`} className="navButton" onClick={handleScroll}><span className="tab"></span><span id="text" className="navText">{a.text}<span id="accent"></span></span></a>) }
+    </nav>
+  )
+}
+
+const Header = ({ head, handleScroll }) => {
+  return(
+    <header id="header">
+      <p className="logo">logo</p>
+      <div className="title" id="title">
+        <h1>{head.head[0]}<br/><i>{head.head[1]}</i><span id="accent"></span></h1>
+      </div>
+      <div className="more">
+        <a href={`#${head.scroll.href}`} onClick={handleScroll}>
+          {head.scroll.text}<br />
+          <i className="fas fa-arrow-circle-down"></i>
+        </a>
+      </div>
+      <div className="social">
+        { head.social.map((ico, i) => <a target="_blank" rel="noopener noreferrer" key={i} href={ico.href}><i className={ico.ico} /></a>) }
+      </div>
+    </header>
+  )
+}
+
 const About = ({ ab }) => {
   return(
     <div className="about" id="about" >
@@ -23,13 +78,42 @@ const Contact = ({ ct }) => {
   )
 }
 
-const Content = ({ content, contact }) => {
+const Footer = ({ foot, handleScroll }) => {
+  const year = new Date()
+  // Add phone number: <li><a href={`tel:${foot.phone}`}>{foot.phone}</a></li>
   return(
-    <div className="content" id="content">
-      <About ab={ content.about } />
-      <Projects pr={ content.projects } />
-      <Contact ct={ contact } />
-    </div>
+    <footer>
+      <ul>
+        { foot.social.map((ico, i) => <li key={i} id="social"><a target="_blank" rel="noopener noreferrer" href={ico.href} title={ico.text}><i className={ico.ico} /></a></li>) }
+        <li id="social"><a target="_blank" rel="noopener noreferrer" href={foot.source}><i className="fas fa-code" title="Source code" /></a></li>
+      </ul>
+      <ul id="copyright">
+        <li><a href={`mailto:${foot.email}`}><b>{foot.email}</b></a></li>
+        <li><a href="#header" onClick={handleScroll}><i className="fas fa-copyright copy" />Teemu Nurmi {year.getFullYear()}</a></li>
+      </ul>
+    </footer>
+  )
+}
+
+const Content = ({ handleHamburger, nav, pdf, head, handleScroll, content, contact, footer }) => {
+  return(
+    <>
+      <Hamburger handleHamburger={handleHamburger} />
+      <Navigation nav={nav} handleScroll={handleScroll} pdf={pdf} />
+      <Header head={head} handleScroll={handleScroll} />
+      
+      <div className="content" id="content">
+        <About ab={ content.about } />
+        <Projects pr={ content.projects } />
+        <Contact ct={ contact } />
+      </div>
+
+      <div className="back more">
+        <a href="#content" onClick={handleScroll}><i className="fas fa-arrow-circle-up"></i><br />takaisin ylös</a>
+      </div>
+
+      <Footer foot={footer} handleScroll={handleScroll}/>
+    </>
   )
 }
 

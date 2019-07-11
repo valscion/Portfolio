@@ -43,9 +43,9 @@
       "head": "Muutama tekemäni projekti...",
       "projects": [
         {
-          "head": "Electron Asteroids",
-          "description": "Asteroids tyylinen peli koodattuna perus JavaScriptillä. Peli käyttää HTML:n canvas elementtiä grafiikan luomiseen ja moottori toimii JavaScript setInterval toiminnalla.",
-          "problems": "Suurimpia haasteita toi valitsemani olio-ohjelmointi tyylinen toteutus, koska en ollut tähän mennessä opiskellut kyseistä tyyliä. Myös JavaScriptin osaaminen oli melko vähäistä, mutta tämän projektin aikana opin perusteet hyvin.",
+          "head": "Asteroids",
+          "description": "Asteroids tyylinen peli koodattuna vanilla JavaScriptillä. Peli käyttää HTML:n canvas elementtiä grafiikan luomiseen ja moottori toimii JavaScript setInterval toiminnalla.",
+          "problems": "Suurimpia haasteita toi valitsemani olio-ohjelmointi tyylinen toteutus, koska en ollut tähän mennessä opiskellut kyseistä tyyliä. Myös JavaScriptin osaaminen oli melko vähäistä, mutta tämän projektin aikana opin perusteet hyvin. GitHub repo on Electron pohjaiselle versiolle, mutta pelin tiedostot on js kansiossa, josta hostattu versiokin on otettu.",
           "technologies":{
             "head": "Käytettyjä teknologioita",
             "tech": [
@@ -74,7 +74,7 @@
               },
               {
                 "text": "Live sivu",
-                "href": "#",
+                "href": "https://those-asteroids.web.app/",
                 "ico": "fas fa-laptop"
               }
             ]
@@ -82,8 +82,8 @@
         },
         {
           "head": "React To-do app",
-          "description": "Ensimmäinen Reactilla toteuttamani projekti. Yksinkertainen To-do aplikaatio, jossa Firebase toimii back-endinä. Sisään voi kirjautua tunnuksilla: email: testaaja@testi.fi password: 123456.",
-          "problems": "Projekti keskittyi enemmän toiminnalisuuden kehitykseen ja opin paljon Reactista, Firebasesta ja niiden käytöstä. Aplikaatio vaatii sisäänkirjautumisen toimiakseen, jotta Firebase osaa lisätä eri käyttäjien muistiinpanot omaan tauluun. Projektista jäi puuttumaan käyttäjän lisäämisen toiminnallisuus.",
+          "description": "Ensimmäinen Reactilla toteuttamani projekti. Yksinkertainen To-do applikaatio, jossa Firebase toimii back-endinä. Sisään voi kirjautua tunnuksilla: email: testaaja@testi.fi password: 123456.",
+          "problems": "Projekti keskittyi enemmän toiminnalisuuden kehitykseen ja opin paljon Reactista, Firebasesta ja niiden käytöstä. Applikaatio vaatii sisäänkirjautumisen toimiakseen, jotta Firebase osaa lisätä eri käyttäjien muistiinpanot omaan tauluun. Projektista jäi puuttumaan käyttäjän lisäämisen toiminnallisuus.",
           "technologies":{
             "head": "Käytettyjä teknologioita",
             "tech": [

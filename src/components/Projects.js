@@ -1,5 +1,6 @@
 import React from 'react'
 
+// map & Return individual projects
 const Project = ({ project }) => {
   return(
     <>
@@ -34,6 +35,7 @@ const Project = ({ project }) => {
   )
 }
 
+// The projects container
 const Projects = ({ pr }) => {
   return(
     <div className="projects" id="projects">
