@@ -28,10 +28,10 @@ const Hamburger = ({ handleHamburger }) => {
 }
 
 const Navigation = ({ nav, handleScroll, pdf }) => {
-  // <a className="navButton" target="_blank" rel="noopener noreferrer" href={pdf}><span className="tab"></span><span id="text" className="navText">Minun CV<span id="accent"></span></span></a>
   return(
     <nav id="nav">
       { nav.map((a, i) => <a key={i} href={`#${a.href}`} className="navButton" onClick={handleScroll}><span className="tab"></span><span id="text" className="navText">{a.text}<span id="accent"></span></span></a>) }
+      <a target="_blank" rel="noopener noreferrer" href={`${pdf}`} className="navButton"><span className="tab"></span><span id="text" className="navText">Minun CV<span id="accent"></span></span></a>
     </nav>
   )
 }
@@ -39,7 +39,6 @@ const Navigation = ({ nav, handleScroll, pdf }) => {
 const Header = ({ head, handleScroll }) => {
   return(
     <header id="header">
-      <p className="logo">logo</p>
       <div className="title" id="title">
         <h1>{head.head[0]}<br/><i>{head.head[1]}</i><span id="accent"></span></h1>
       </div>
@@ -80,7 +79,6 @@ const Contact = ({ ct }) => {
 
 const Footer = ({ foot, handleScroll }) => {
   const year = new Date()
-  // Add phone number: <li><a href={`tel:${foot.phone}`}>{foot.phone}</a></li>
   return(
     <footer>
       <ul>
@@ -89,6 +87,7 @@ const Footer = ({ foot, handleScroll }) => {
       </ul>
       <ul id="copyright">
         <li><a href={`mailto:${foot.email}`}><b>{foot.email}</b></a></li>
+        <li><a href={`tel:${foot.phone}`}><b>{foot.phone}</b></a></li>
         <li><a href="#header" onClick={handleScroll}><i className="fas fa-copyright copy" />Teemu Nurmi {year.getFullYear()}</a></li>
       </ul>
     </footer>

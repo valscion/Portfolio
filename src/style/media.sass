@@ -28,11 +28,14 @@
       pointer-events: all
       opacity: 1
     nav
+      box-shadow: 0px 2px 5px 0px rgba(37, 4, 71, 0.3)
       background: $purple--noAlpha
       display: block
       a
         max-width: 100%
         font-size: 1.4rem
+      &:hover#text
+        box-shadow: 0px 0px 3px 1px rgba(209,230,236,.4)
       .atTop
         top: 0px !important
       .tab
@@ -89,6 +92,11 @@
       width: 100%
     .back 
       margin-bottom: 0
+    footer
+      ul
+        li
+          padding-bottom: 0
+          padding-right: 1rem
 
 @media screen and (max-width: 410px)
   i
@@ -110,30 +118,29 @@
     .contact, .about
       width: 100%
     footer
-      ul
-        li
-          padding-bottom: 0
-          padding-right: 1rem
-          a
-            font-size: .8rem
-          i
-            font-size: .8rem !important
-            padding-right: .8rem
+      ul li a
+        font-size: .8rem
+        i
+          font-size: .8rem !important
+          padding-right: .8rem
 
-@media screen and (max-width: 350px)
+@media screen and (max-width: 360px)
   i
-    font-size: 1.3rem !important
+    font-size: 1.5rem !important
   .main
     nav
       a
         font-size: 1.2rem
         max-width: 100%
-      .social
-        i
-          font-size: 2rem !important
+    .social
+      i
+        font-size: 2rem !important
     footer
       ul
+        &#copyright
+          flex-direction: column
         li
+          padding-right: 0
           a
             font-size: .7rem
           i
