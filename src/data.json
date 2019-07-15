@@ -132,39 +132,26 @@
           }
         },
         {
-          "head": "Asteroids",
-          "description": "Asteroids tyylinen peli koodattuna vanilla JavaScriptillä. Peli käyttää HTML:n canvas elementtiä grafiikan luomiseen ja moottori toimii JavaScript setInterval toiminnalla.",
-          "problems": "Suurimpia haasteita toi valitsemani olio-ohjelmointi tyylinen toteutus, koska en ollut tähän mennessä opiskellut kyseistä tyyliä. Myös JavaScriptin osaaminen oli melko vähäistä, mutta tämän projektin aikana opin perusteet hyvin. GitHub repo on Electron pohjaiselle versiolle, mutta pelin tiedostot on js kansiossa, josta hostattu versiokin on otettu.",
+          "head": "Color Picker",
+          "description": "Javalla kehitetty värin valinta työkalu. Työkalu pystyy valitsemaan näytöllä olevista pikseleistä värin ja tulostamaan sen RGB, HSV ja HEX värinä. Esinäkymä ikkunasta näkee mitä väriä valitaan ja valitut värit tulee listaan. Käyttöliittymä ja toiminnallisuus on rakennettu Javan AWT kirjastolla.",
+          "problems": "Ohjelmaa jotui vähän \"hakkeroimaan\", jotta se pysyy näytössä päälimmäisenä aktivoinnin jälkeen. Tämän ansiosta ohjelmalla voidaan valita kerralla useampi piste.",
           "technologies":{
             "head": "Käytettyjä teknologioita",
             "tech": [
               {
-                "ico": "fab fa-js",
-                "href": "JavaScript"
-              },
-              {
-                "ico": "fab fa-html5",
-                "href": "HTML 5"
-              },
-              {
-                "ico": "fab fa-css3",
-                "href": "CSS 3"
+                "ico": "fab fa-java",
+                "href": "Java"
               }
             ]
           },
-          "img": "./img/asteroids.png",
+          "img": "./img/ColorPicker.png",
           "links": {
             "head": "Linkkejä projektiin",
             "href": [
               {
                 "text": "GitHub",
-                "href": "https://github.com/Larqqa/Electron-asteroids",
+                "href": "https://github.com/Larqqa/Color-Picker",
                 "ico": "fab fa-github-square"
-              },
-              {
-                "text": "Live sivu",
-                "href": "https://those-asteroids.web.app/",
-                "ico": "fas fa-laptop"
               }
             ]
           }
@@ -212,26 +199,39 @@
           }
         },
         {
-          "head": "Color Picker",
-          "description": "Javalla kehitetty värin valinta työkalu. Työkalu pystyy valitsemaan näytöllä olevista pikseleistä värin ja tulostamaan sen RGB, HSV ja HEX värinä. Esinäkymä ikkunasta näkee mitä väriä valitaan ja valitut värit tulee listaan. Käyttöliittymä ja toiminnallisuus on rakennettu Javan AWT kirjastolla.",
-          "problems": "Ohjelmaa jotui vähän \"hakkeroimaan\", jotta se pysyy näytössä päälimmäisenä aktivoinnin jälkeen. Tämän ansiosta ohjelmalla voidaan valita kerralla useampi piste.",
+          "head": "Asteroids",
+          "description": "Asteroids tyylinen peli koodattuna vanilla JavaScriptillä. Peli käyttää HTML:n canvas elementtiä grafiikan luomiseen ja moottori toimii JavaScript setInterval toiminnalla.",
+          "problems": "Suurimpia haasteita toi valitsemani olio-ohjelmointi tyylinen toteutus, koska en ollut vielä opiskellut olio-ohjelmointia. Myös JavaScriptin osaaminen oli hyvin aloittelija tasolla, mutta tämä projekti opetti paljon uutta. Pelin kaikkien elementtien sijainnit ja liikkeet on laskettu erikseen ja sen jälkeen piirretty 2D koordinaattien avulla Canvas elementtiin. Github reposta löytyy pelin tiedostot js kansiosta.",
           "technologies":{
             "head": "Käytettyjä teknologioita",
             "tech": [
               {
-                "ico": "fab fa-java",
-                "href": "Java"
+                "ico": "fab fa-js",
+                "href": "JavaScript"
+              },
+              {
+                "ico": "fab fa-html5",
+                "href": "HTML 5"
+              },
+              {
+                "ico": "fab fa-css3",
+                "href": "CSS 3"
               }
             ]
           },
-          "img": "./img/ColorPicker.png",
+          "img": "./img/asteroids.png",
           "links": {
             "head": "Linkkejä projektiin",
             "href": [
               {
                 "text": "GitHub",
-                "href": "https://github.com/Larqqa/Color-Picker",
+                "href": "https://github.com/Larqqa/Electron-asteroids",
                 "ico": "fab fa-github-square"
+              },
+              {
+                "text": "Live sivu",
+                "href": "https://those-asteroids.web.app/",
+                "ico": "fas fa-laptop"
               }
             ]
           }
