@@ -60,8 +60,18 @@ const About = ({ ab, pdf }) => {
     <div className="about" id="about" >
       <span id="anchor-about" className="anchor" />
       <h3>{ ab.head }</h3>
-      <p>{ ab.content }</p>
-      <a target="_blank" rel="noopener noreferrer" href={`${pdf}`}><b>Minun CV</b></a>
+      { ab.content.map((c, i) => {return(
+        <p key={i} className="aboutText" >{
+          c.map((txt, i) =>
+            txt.txt ? <a key={i} target="_blank" rel="noopener noreferrer" href={txt.link}><b>{txt.txt}</b></a> : txt
+          )
+        }</p>
+      )})}
+      <div id="skills">
+        <h4>Osaaminen</h4>
+        {ab.tech.map((t, i) => <i key={i} className={t.ico} title={t.href} />)}
+      </div>
+      <a target="_blank" rel="noopener noreferrer" href={`${pdf}`}><b id="text">Minun CV</b></a>
       <span id="accent" className="accent-about"></span>
     </div>
   )

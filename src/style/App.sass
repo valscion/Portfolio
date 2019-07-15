@@ -114,11 +114,23 @@
     h3
       margin-top: 0
     a
-      color: $purple--noAlpha
+      padding: 0
+      position: relative
+      top: 0px
+      transition: top .1s, color .1s
       &:hover
         color: lighten($purple--noAlpha, 20%)
+        top: -3px
     #accent
       background-color: $yellow
+    p
+      margin: 1rem 0
+    #skills
+      margin: 1rem 0
+      h4
+        margin: 1rem 0
+      i
+        padding-right: 1rem
 
   .projects
     padding: $pad__main

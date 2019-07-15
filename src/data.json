@@ -37,11 +37,100 @@
   {
     "about": {
       "head": "Vähän minusta,",
-      "content": "Koodausta olen opiskellut siitä lähtien, kun innostuin siitä koulun toisen vuoden PHP-kurssilla. Valmistuin tradenomiksi 04/2018, jonka jälkeen suoritin asepalveluksen. Nyt käyn Full Stack Open 2019 kurssia. Sen kautta tavoitteenani on syventää Reactin hallitsemistani ja kehittyä käyttökokemuksen suunnittelussa."
+      "content": [
+        ["Koodausta olen opiskellut innostuttuani siitä AMK:n PHP-kurssilla 2015. Kävin Lahden ammattikorkeakoulussa Business Information technology linjan, eli kansainvälisen ja englannin kielisen linjan. Valmistuin tradenomiksi 04/2018, jonka jälkeen suoritin asepalveluksen 07/2018 - 06/2019."],
+
+        ["Olen pääasiallisesti keskittynyt front-end puoleen tähän mennessä. Opiskelen tällä hetkellä fullstack kehitystä ja Reactia ",{"txt": "Full Stack Open 2019", "link": "https://fullstackopen.com/"}," kurssin avulla. Hyvin suunnitellut ja näyttävät ulkoasut ja käyttäjäystävällisyys kiinnostavat minua, mutta pidän myös serveri puolen toiminnallisuutta erittäin mielenkiintoisena. Ohjelmoinnissa minua kiinnostaa ongelmien ratkaisu, uusien asioiden oppiminen ja jatkuva kehitys"]
+      ],
+      "tech": [
+        {
+          "ico": "fab fa-js",
+          "href": "JavaScript"
+        },
+        {
+          "ico": "fab fa-html5",
+          "href": "HTML 5"
+        },
+        {
+          "ico": "fab fa-css3",
+          "href": "CSS 3"
+        },
+        {
+          "ico": "fab fa-php",
+          "href": "PHP"
+        },
+        {
+          "ico": "fab fa-wordpress",
+          "href": "WordPress"
+        },
+        {
+          "ico": "fab fa-react",
+          "href": "React.js"
+        },
+        {
+          "ico": "fab fa-github",
+          "href": "GitHub"
+        }
+      ]
     },
     "projects": {
       "head": "Muutama tekemäni projekti...",
       "projects": [
+        {
+          "head": "Käyttäjienhallinta REST API",
+          "description": "PHP:llä rakennettu RESTful Web palvelu, jota voidaan käyttää käyttäjätietojen tallennukseen, muuttamiseen ja sisäänkirjautumisen hallintaan. Järjestelmä toimii HTTP pyynnöillä, joita Front-end puolen React applikaatio lähettää Axios kirjaston avulla. HTTP pyynnön vastauksena tulee JSON olio, josta saadaan tarpeelliset käyttäjän tiedot. Ajatuksena on käyttää tätä palvelua käyttäjienhallintaan tulevissa projekteissa.",
+          "problems": "Projektin tarkoitus oli syventyä PHP osaamisessa ja kerrata perusteita. Samalla opin front-end:n ja back-end:n yhdistämistä ja rajapintojen kehitystä ja käyttöä. Haasteita projektissa tuli rajapinnan toiminnallisuuden kehityksessä ja tiedon välityksessä serverille ja takaisin. Tämä oli suurimmaksi osaksi uutta ja kokeilullista kehitystä, mutta sain palvelun toimimaan juuri haluamallani tavalla. API on hostattuna Herokussa, joten käynnistyminen voi kestää hetken.",
+          "technologies":{
+            "head": "Käytettyjä teknologioita",
+            "tech": [
+              {
+                "ico": "fab fa-php",
+                "href": "PHP"
+              },
+              {
+                "ico": "fab fa-html5",
+                "href": "HTML 5"
+              },
+              {
+                "ico": "fab fa-sass",
+                "href": "SASS"
+              },
+              {
+                "ico": "fab fa-css3",
+                "href": "CSS 3"
+              },
+              {
+                "ico": "fab fa-react",
+                "href": "React.js"
+              },
+              {
+                "ico": "fab fa-js",
+                "href": "JavaScript"
+              }
+            ]
+          },
+          "img": "./img/RESTAPI.png",
+          "links": {
+            "head": "Linkkejä projektiin",
+            "href": [
+              {
+                "text": "GitHub",
+                "href": "https://github.com/Larqqa/PHP-REST-API",
+                "ico": "fab fa-github-square"
+              },
+              {
+                "text": "Live sivu",
+                "href": "https://larqqa.github.io/PHP-REST-API/",
+                "ico": "fas fa-laptop"
+              },
+              {
+                "text": "API",
+                "href": "https://login-backend-rest-api.herokuapp.com/",
+                "ico": "fas fa-laptop"
+              }
+            ]
+          }
+        },
         {
           "head": "Asteroids",
           "description": "Asteroids tyylinen peli koodattuna vanilla JavaScriptillä. Peli käyttää HTML:n canvas elementtiä grafiikan luomiseen ja moottori toimii JavaScript setInterval toiminnalla.",
@@ -118,6 +207,31 @@
                 "text": "Live sivu",
                 "href": "https://kanboost.firebaseapp.com/",
                 "ico": "fas fa-laptop"
+              }
+            ]
+          }
+        },
+        {
+          "head": "Color Picker",
+          "description": "Javalla kehitetty värin valinta työkalu. Työkalu pystyy valitsemaan näytöllä olevista pikseleistä värin ja tulostamaan sen RGB, HSV ja HEX värinä. Esinäkymä ikkunasta näkee mitä väriä valitaan ja valitut värit tulee listaan. Käyttöliittymä ja toiminnallisuus on rakennettu Javan AWT kirjastolla.",
+          "problems": "Ohjelmaa jotui vähän \"hakkeroimaan\", jotta se pysyy näytössä päälimmäisenä aktivoinnin jälkeen. Tämän ansiosta ohjelmalla voidaan valita kerralla useampi piste.",
+          "technologies":{
+            "head": "Käytettyjä teknologioita",
+            "tech": [
+              {
+                "ico": "fab fa-java",
+                "href": "Java"
+              }
+            ]
+          },
+          "img": "./img/ColorPicker.png",
+          "links": {
+            "head": "Linkkejä projektiin",
+            "href": [
+              {
+                "text": "GitHub",
+                "href": "https://github.com/Larqqa/Color-Picker",
+                "ico": "fab fa-github-square"
               }
             ]
           }
